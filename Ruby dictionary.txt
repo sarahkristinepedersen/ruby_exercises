@@ -1,0 +1,603 @@
+Shortcuts
+#	alt + 3
+“	alt +[
++	shift + =
+{}	shift + []
+|	shift + \
+
+
+change directory (cd e.g. desktop)
+print working directory (pwd)
+shortcut to library one level up (..)
+saving (ruby filename.rb)
+escape infinite loop (Ctrl + c)
+
+integer (number with no decimals)
+float (number with decimals - use full-stop)
+7/2 (== 3 when using integers)
+integers and floats can be combined
+
+
+string (group of letters. Can contain punctuation, digits ("12"), symbols, spaces, letters)
+"" (new line)
+" " (empty string)
+arithmetic on string (e.g. "string " + "string", "string" * 4 but not "string" + 12 or "string" * "string" or 12 * "string")
+
+\ (escaping apostrophe or backslash itself e.g. 'you'\re sweet')
+
+
+
+
+my_num = 25 (number)
+my_boolean = true (boolean)
+my_string = 'Ruby' (string)
+
+variable (string or number stored for later use)
+
+Assignment operators (=, +=, -=, *=, /=)
+Relational operator/equal to (==)
+Not equal to (!=)
+Addition (+)
+Subtraction (-)
+Multiplication (*)
+Division (/)
+Exponentiation (**)
+Modulo (%)
+Less than (<)
+Less than or equal to (<=)
+Greater than (>)
+Greater than or equal to (>=)
+
+
+
+Logical or boolean operators
+and (&&)
+or (||)
+not (!)
+Boolean operators result in boolean values: true or false.
+true && true # => true
+true && false # => false
+false && true # => false
+false && false # => false
+true || true # => true
+true || false # => true
+false || true # => true
+false || false # => false
+!true # => false
+!false # => true
+
+
+
+puts / print
+
+.length
+.reverse
+.upcase
+.downcase
+.capitalize
+.swapcase
+.get
+.chomp
+.to_s
+.to_i
+.to_f
+.center
+.rjust
+.ljust
+.abs (returns the absolute value to 0)
+rand(number)
+Math.sqrt (square root)
+:: (scope operator)
+
+
+
+
+
+
+
+#comment
+=begin and end with =end, everything between those two expressions will be a comment.
+
+variable_name = gets.chomp (chomp removes the extra line that gets
+
+#{} (string interpolation - replace the #{variable} with the value of variable)
+
+! (at the end of a method modifies the value contained within the variable answer itself)
+
+Expressions
+if
+else
+elsif
+unless
+
+hungry = false
+unless hungry
+  puts "I'm writing Ruby programs!"
+else hungry
+  puts "Time to eat!"
+end
+
+.include?
+.gsub (global substitution)
+.empty? (takes boolean value)
+
+if user_input.include? 's'
+    user_input.gsub!(/s/, 'th')
+
+Loops
+while (always require boolean)
+until (backwards while)
+for (when you know how many times you'll be looping e.g. for i in num..num)
+
+num..num (two dots means go up to but don't include last num)
+num...num (three dots means go up to and include last num)
+
+Iterator (a method that repeatedly invokes a block of code)
+loop method (e.g. loop { print "Hello, world!" } )
+
+curly braces ({}) are generally interchangeable with the keywords do (to open the block) and end (to close it). 
+break (breaks a loop as soon as its condition is met. Returns to the outer loop)
+
+next (used to skip over certain steps in a loop)
+array (used to store a list of values in a single variable [num, "string", [array], boolean]. Each element in the array has what's called an index. The first element gets index 0. Array = [5, 7, 9, 2, 0] - to access 9 -> array[2])
+multidimensional array (array of arrays)
+.each (can apply an expression to each element of an object, one at a time. e.g. object.each { |item| # Do something } or object.each do |item| # Do something end)
+.times (can perform a task on each item in an object a specified number of times e.g. 10.times { print "string" })
+
+.split (takes in a string and returns an array. Pass it a bit of text in parentheses, .split will divide the string wherever it sees that bit of text, called a delimiter e.g. text.split(" , "))
+
+hash = {key => value,
+	name => "string",
+	num => 2
+	boolean => true
+	}
+my_hash = Hash.new (creates a new, empty hash; it's the same as setting the variable equal to empty curly braces ({}))
+
+add to a hash (pets = Hash.new, pets["Stevie"] = "cat" # adds the key "Stevie" with the value "cat" to the hash. To access the value "cats", simply use pets["Stevie"] (the key))
+
+
+.each iterator to iterate over arrays and hashes (e.g.
+numbers = [1, 2, 3, 4, 5]
+numbers.each { |element| puts element }
+
+or family.each { |x, y| puts "#{x}: #{y}" }) or secret_identities.each do |supername, alterego|
+    puts "#{supername}: #{alterego}"
+ end
+
+| | (placeholder)
+
+s[0][1] (the second element of the first element)
+array.each { |element| action }
+
+Histogram
+puts "Text please: "
+text = gets.chomp
+
+words = text.split(" ")
+frequencies = Hash.new(0)
+words.each { |word| frequencies[word] += 1 }
+frequencies = frequencies.sort_by {|a, b| b }
+frequencies.reverse!
+frequencies.each { |word, frequency| puts word + " " + frequency.to_s }
+
+.sort_by (sort the order e.g. colors = colors.sort_by do |color, count| . Returns an array of arrays)
+
+.reverse (reverse the order)
+.to_s (returns in string format)
+.to_a (return an array)
+.sort{|key, value|}
+
+method (a reusable section of code written to perform a specific task in a program)
+Methods are defined using the keyword def (short for "define"). Methods have three parts:
+
+The header, which includes the def keyword, the name of the method, and any arguments the method takes.
+The body, which is the code block that describes the procedures the method carries out. The method ends with the end keyword.
+Defining a method is great, but it's not much use to you unless you call it. For example, if you call a method called cartoon_fox, Ruby will start looking for the method with that name and try to execute the code inside it. If Ruby doesn't find a method called cartoon_fox, it will return a NameError. If a method takes arguments, we say it accepts or expects those arguments. You can think of parameters as nicknames the method definition gives to arguments, since it doesn't know ahead of time exactly what argument it's going to get. Parentheses are usually optional in Ruby, but it's a good idea to put your parameters and arguments in parentheses for readability.
+
+
+splat arguments (arguments preceded by a *, which signals that you don't know how many arguments there are about to be)
+
+
+return (always returns the last value in a method)
+blocks (You can think of blocks as a way of creating methods that don't have a name. Blocks can be defined with either the keywords do and end or with curly braces ({}). A method can take a block as a parameter.)
+
+abstracting (making something simpler)
+
+sorting an array (my_array.sort)
+
+combined comparison operator (<=> compare two objects. Returns 0 if the first operand (item to be compared) equals the second, 1 if first operand is greater than the second, and -1 if the first operand is less than the second)
+
+
+
+
+
+
+
+
+
+def what_up(greeting, *bros)
+  bros.each { |bro| puts "#{greeting}, #{bro}!" }
+end
+ 
+what_up("What up", "Justin", "Ben", "Kevin Sorbo")
+
+
+[1, 2, 3, 4, 5].each { |i| puts i }
+[1, 2, 3, 4, 5].each { |i| puts i*5 }
+
+
+# To sort our books in ascending order, in-place
+books.sort! { |firstBook, secondBook| firstBook <=> secondBook }
+
+# Sort your books in descending order, in-place below
+books.sort! { |firstBook, secondBook| secondBook <=> firstBook}
+
+
+(1..10).each { |i| puts i }
+
+object.method { |placeholder| action }
+
+def alphabetize(arr, rev=false)
+
+
+
+
+
+
+
+
+
+
+
+Hashes are a collections of key-value pairs where a unique key is associated with some value.
+Hashes can be created with hash literal notation: new_hash = { "one" => 1 } and hash constructor notation: new_hash = Hash.new
+
+Iterate over hashes
+matz = { "First name" => "Yukihiro",
+  "Last name" => "Matsumoto",
+  "Age" => 47,
+}
+
+matz.each do |key, value|
+    puts matz[key]
+end
+
+when "display"
+  movies.each do |movie, rating|
+  puts "#{movie}: #{rating}"
+end
+
+
+symbol (variable ending with colon. A sort of name but not a string. While multiple different strings can have the same value, there's only one copy of any particular symbol at a given time. Primarily used either as hash keys or for referencing method names. Symbols make good hash keys for a few reasons: 1) They're immutable, meaning they can't be changed once they're created; 2) Only one copy of any symbol exists at a given time, so they save memory; 3) Symbol-as-keys are faster than strings-as-keys because of the above two reasons.)
+
+Old version
+symbol_hash = {
+  :one => 1,
+  :two => 2,    # Fill in these two blanks!
+  :three => 3,
+}
+
+New version
+movies = {
+    rain_man: "good",
+    toy_story: "good",
+    my_little_ponny: "best"
+    }
+
+Converting symbol to string and string to symbol (.to_s and .to_sym or .intern)
+
+strings = ["HTML", "CSS", "JavaScript", "Python", "Ruby"]
+symbols = []
+strings.each do |s|
+    symbols.push(s.to_sym)
+end
+
+when "display"
+  movies.each do |movie, rating|
+  puts "#{movie}: #{rating}"
+end
+
+
+.object_id (gets the ID of an object—it's how Ruby knows whether two objects are the exact same object)
+
+.select (filter a hash for values that meet certain criteria)
+good_movies = movie_ratings.select {|n, r| r > 3}
+
+.each_key (iterate over hash key)
+.each_value (iterate over hash value)
+movie_ratings.each_value {|v| puts v, " " }
+
+
+concatenation operator (<< can be used instead of push e.g. [1, 2, 3] << 4  # ==> [1, 2, 3, 4])
+.push
+.pull
+.delete (movies.delete(title.to_sym))
+.upto (e.g. 95.upto(100) { |num| print num, " " } #Prints 95 96 97 98 99 100)
+.downto (defending order)
+
+.respond_to? (takes a symbol and returns true if an object can receive that method and false otherwise)
+[1, 2, 3].respond_to?(:push) would return true, since you can call .push on an array object. However, [1, 2, 3].respond_to?(:to_sym) would return false, since you can't turn an array into a symbol.
+
+
+
+
+=> (hash rocket - old Ruby version)
+
+case statement 
+example:
+movies = {
+    Inglourious_Basterds: 4
+    }
+
+
+puts "What would you like to do?"
+choice = gets.chomp
+
+case choice
+when "add"
+  puts "Added!"
+else
+  puts "Error!"
+end
+
+or
+
+case language
+  when "Ruby" then puts "Web apps!"
+  else puts "I don't know!"
+end
+
+nil (along with false, nil is one of two non-true values in Ruby)
+
+.nil? (returns true if the object it's called on is nil, and false otherwise)
+
+
+expression/action if/unless boolean (expects an expression/action followed by if/unless followed by a boolean e.g. puts "It's true!" if 1==1)
+
+
+ternary conditional expression (more concise version of if/else. Takes three arguments: 1) a boolean; 2) an expression to evaluate if the boolean is true; 3) an expression to evaluate if the boolean is false)
+
+boolean ? Do this if true: Do this if false
+e.g. puts 3 < 4 ? "3 is less than 4!" : "3 is not less than 4."
+
+
+conditional assignment operator (||= assigning a variable that hasn't already been assigned)
+
+
+
+short-circuit evaluation (Ruby doesn't look at both expressions unless it has to; if it sees false && true, it stops reading as soon as it sees && because it knows false && anything must be false)
+
+
+.times (if we want to do something a specific number of times)
+5.times { puts "Odelay!" }
+
+.each (if we want to repeat an action for every element in a collection)
+[1, 2, 3].each { |x| puts x * 10 }
+or
+my_array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+my_array.each {|m| puts m if m % 2 == 0}
+
+refactoring (improving the structure or appearance of the code without changing what it actually does)
+
+ways of refactor
+one-liners
+action if boolean (puts "One is less than two!" if 1 < 2)
+
+ternary operator
+three = 3	puts three == 3 ? "Of course." : "What?"
+# ==> puts "Of course."
+
+case variable
+case variable
+when value1 then #Do something!
+else
+  # Do the default thing!
+end
+
+conditional assignment
+favorite_animal ||= "Dog"
+puts "My favourite animal is a #{favorite_animal.downcase}"
+
+implicit return
+def square num
+    num*num
+end
+square(4)
+
+.times
+3.times do (1..3)
+  puts "I'm a refactoring master!"
+end
+
+
+block (a bit of code that can be executed. Block syntax uses either do..end or curly braces ({}). Blocks can be combined with methods like .each and .times to execute an instruction for each element in a collection (like a hash or array))
+[1, 2, 3].each do |num|
+  puts num
+end
+# ==> Prints 1, 2, 3 on separate lines
+or
+[1, 2, 3].each { |num| puts num }
+# ==> Prints 1, 2, 3 on separate lines
+
+.collect (takes a block and applies the expression in the block to every element in an array. )
+my_nums = [1, 2, 3]
+my_nums.collect { |num| num ** 2 }
+# ==> [1, 4, 9]
+
+the variable doesn't change because .collect returns a copy of variable, but doesn't change (or mutate) the original array)
+
+yield (? - do research this - Codeacademy: Blocks, Procs, and Lambdas 4/21)
+
+blocks vs. prods (blocks can't be saved to variables and don't have all the powers and abilities of a real object. However, procs can.  A proc is a "saved" block: just like you can give a bit of code a name and turn it into a method, you can name a block and turn it into a proc. Procs are great for keeping your code DRY, which stands for Don't Repeat Yourself. With blocks, you have to write your code out each time you need it; with a proc, you write your code once and can use it many times)
+
+Proc.new (defines a new proc. Needs to be passed in the block you want to save e.g. cube = Proc.new { |x| x ** 3 }. The proc can be passed to a method that would otherwise take a block, and we don't have to rewrite the block over and over. Procs are full-fledged objects, so they have all the powers and abilities of objects. (Blocks do not.) Unlike blocks, procs can be called over and over without rewriting them. This prevents you from having to retype the contents of your block every time you need to execute a particular bit of code.)
+[1, 2, 3].collect!(&cube)
+# ==> [1, 8, 27]
+[4, 5, 6].map!(&cube)
+# ==> [64, 125, 216]
+.collect! (does the same as .map!)
+.map! (does the same as .collect!)
+
+& (converts the cube proc into a block since .collect! and .map! normally take a bloc. We'll do this any time we pass a proc to a method that expects a block. You can also convert symbols to procs this way - using &)
+
+strings = ["1", "2", "3"]
+nums = strings.map(&:to_i)
+# ==> [1, 2, 3]
+By mapping &:to_i over every element of strings, we turned each string into an integer!
+
+group_1 = [4.1, 5.5, 3.2, 3.3, 6.1, 3.9, 4.7]
+over_4_feet = Proc.new { |height| height >= 4 }
+can_ride_1 = group_1.select(&over_4_feet)
+
+floats = [1.2, 3.45, 0.91, 7.727, 11.42, 482.911]
+round_down = Proc.new {|f| f.floor}
+ints = floats.collect(&round_down)
+
+.floor (rounds a float down to the nearest integer)
+.call (call a proc directly)
+test = Proc.new { # does something }
+test.call # does that something!
+
+lambda (object almost identical to procs e.g. lambda { |param| block })
+def lambda_demo(a_lambda)
+  puts "I'm the method!"
+  a_lambda.call
+end
+lambda_demo(lambda { puts "I'm the lambda!" })
+#I'm the method!
+#I'm the lambda!
+
+prods vs. lambdas (First, a lambda checks the number of arguments passed to it, while a proc does not. This means that a lambda will throw an error if you pass it the wrong number of arguments, whereas a proc will ignore unexpected arguments and assign nil to any that are missing. Second, when a lambda returns, it passes control back to the calling method; when a proc returns, it does so immediately, without going back to the calling method)
+
+to check if something is a symbol
+my_array = ["raindrops", :kettles, "whiskers", :mittens, :packages]
+symbol_filter = lambda {|m| m.is_a? Symbol}
+symbols = my_array.select(&symbol_filter)
+
+A block is just a bit of code between do..end or {}. It's not an object on its own, but it can be passed to methods like .each or .select.
+A proc is a saved block we can use over and over.
+A lambda is just like a proc, only it cares about the number of arguments it gets and it returns to its calling method rather than returning immediately.
+
+odds_n_ends = [:weezard, 42, "Trady Blix", 3, true, 19, 12.345]
+ints = odds_n_ends.select{|o| o.is_a? Integer} #returns [42, 3, 19]
+
+creating a proc + passing proc to method
+ages = [23, 101, 7, 104, 11, 94, 100, 121, 101, 70, 44]
+under_100 = Proc.new{|num| num < 100}
+youngsters = ages.select(&under_100)
+
+creating a lambda + passing lambda to method
+crew = {
+  captain: "Picard",
+  first_officer: "Riker",
+  lt_cdr: "Data",
+  lt: "Worf",
+  ensign: "Ro",
+  counselor: "Troi",
+  chief_engineer: "LaForge",
+  doctor: "Crusher"
+}
+first_half = lambda{|rank,name| name < "M"}
+a_to_m = crew.select(&first_half)
+
+class (a way of organising and producing objects with similar attributes and methods. the name of the class must take a capital letter)
+
+class Language
+  def initialize(name, creator)
+    @name = name
+    @creator = creator
+  end
+	
+  def description
+    puts "I'm #{@name} and I was created by #{@creator}!"
+  end
+end
+
+ruby = Language.new("Ruby", "Yukihiro Matsumoto")
+python = Language.new("Python", "Guido van Rossum")
+javascript = Language.new("JavaScript", "Brendan Eich")
+
+ruby.description
+python.description
+javascript.description
+
+initialize (the function that "boots up" each object the class creates)
+
+@ (instance variable. @ before a variable signifies that it's an instance variable. This means that the variable is attached to the instance of the class)
+
+@@ class variables (like instance variables, but instead of belonging to an instance of a class, they belong to the class itself. Class variables always start with two @s, like so: @@files.)
+
+$ (global variables can be declared in two ways. The first is one that's already familiar to you: you just define the variable outside of any method or class, and voilà! It's global. If you want to make a variable global from inside a method or class, just start it with a $, like so: $matz.)
+
+class Car
+  def initialize(make, model)
+    @make = make
+    @model = model
+  end
+end
+kitt = Car.new("Pontiac", "Trans Am")
+
+.new
+
+scope (the scope of a variable is the context in which it's visible to the program)
+
+variables and methods
+When dealing with classes, you can have variables that are available everywhere (global variables), ones that are only available certain methods (local variables), others that are members of a certain class (class variables), and variables that are only available to particular instances of a class (instance variables). The same goes for methods: some are available everywhere, some are only available to members of a certain class, and still others are only available to particular instance objects.
+
+Inheritance (the process by which one class takes on the attributes and methods of another, and it's used to express an is-a relationship. For example, a cartoon fox is a cartoon mammal, so a CartoonFox class could inherit from a CartoonMammal class. However, a Wizard is not an Elf , so it shouldn't inherit from the Elf class. Instead, both Wizard and Elf could ultimately inherit from the same MagicalBeing class.)
+
+derived class (subclass)
+super class (return to super class via super)
+multiple inheritance 8? RESEARCH)
+
+private (makes the interface private)
+public (makes the interface public)
+
+attr_reader (access a variable)
+attr_writer (change a variable)
+attr_accessor (make a variable readable and writeable in one)
+
+class Person
+  attr_reader :name
+  attr_writer :name
+  def initialize(name)
+    @name = name
+  end
+end
+
+
+module (a toolbox that contains a set methods and constants. There are lots and lots of Ruby tools you might want to use, but it would clutter the interpreter to keep them around all the time. For that reason, we keep a bunch of them in modules and only pull in those module toolboxes when we need the constants and methods inside. You can think of modules as being very much like classes, only modules can't create instances and can't have subclasses. They're just used to store things.)
+
+module Circle
+
+  PI = 3.141592653589793
+  
+  def Circle.area(radius)
+    PI * radius**2
+  end
+  
+  def Circle.circumference(radius)
+    2 * PI * radius
+  end
+end
+
+constants (It doesn't make sense to include variables in modules, since variables (by definition) change (or vary). Constants, however, are supposed to always stay the same, so including helpful constants in modules is a great idea. Ruby doesn't make you keep the same value for a constant once it's initialized, but it will warn you if you try to change it. Ruby constants are written in ALL_CAPS and are separated with underscores if there's more than one word)
+
+the main purposes of modules is to separate methods and constants into named spaces. This is called (conveniently enough) namespacing, and it's how Ruby doesn't confuse Math::PI and Circle::PI.
+
+See that double colon we just used? That's called the scope resolution operator, which is a fancy way of saying it tells Ruby where you're looking for a specific bit of code. If we say Math::PI, Ruby knows to look inside the Math module to get that PI, not any other PI (such as the one we created in Circle)
+
+require (explicitly brings in modules)
+require "date"
+puts Date.today
+
+include (any class that includes a certain module can use include)
+
+mixins (when a module is used to mix additional behavior and information into a class, it's called a mixin. Mixins allow us to customize a class without having to rewrite code)
+
+
+
+Whereas include mixes a module's methods in at the instance level (allowing instances of a particular class to use the methods), the extend keyword mixes a module's methods at the class level. This means that class itself can use the methods, as opposed to instances of the class.
+
+
+

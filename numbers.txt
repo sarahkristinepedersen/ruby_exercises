@@ -1,0 +1,9 @@
+zero
+nine
+ten
+eleven
+seventeen
+thirty-two
+eighty-eight
+ninety-nine
+One hundred

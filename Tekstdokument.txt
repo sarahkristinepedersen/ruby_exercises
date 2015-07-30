@@ -1,0 +1,14 @@
+i = 20
+loop do
+  i -= 1
+  next if i % 2 != 0 
+  print "#{i}"
+  break if i <= 0
+end
+
+
+s = [["ham", "swiss"], ["turkey", "cheddar"], ["roast beef", "gruyere"]]
+s.each do |sandwiches|
+   s[0][1]
+	puts sandwiches
+end
