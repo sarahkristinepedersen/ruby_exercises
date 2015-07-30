@@ -1,3 +1,5 @@
+#baby dragon class
+
 class Dragon
   def initialize name
     @name = name
